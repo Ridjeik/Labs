@@ -111,6 +111,16 @@ int main(){
         *(strchr(time_str, '\n')) = '\0';
         fprintf(logFile, "[%s] binary output file \"%s\" saved.\n", time_str, outputFileName);
     }
+    else{
+        errorMessage = "Incorrect choice!";
+        printf("%s\n",errorMessage);
+        time(&curr_time);
+        time_str = ctime(&curr_time);
+        *(strchr(time_str, '\n')) = '\0';
+        fprintf(logFile, "[%s] An error ocurred: %s. Aborting program...\n", time_str, errorMessage);
+        fclose(logFile);
+        return 0;  
+    }
 
     time(&curr_time);
     time_str = ctime(&curr_time);
