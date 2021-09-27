@@ -1,20 +1,27 @@
 #include <stdio.h>
 
+#define LIMIT 100
+
 int main()
 {
-    const int N = 5;
 
-    double A[N][N];
 
-    
+    double A[LIMIT][LIMIT];
 
-    for(int i = 0; i < N*N; i++){
-        scanf("%lf", (*A + i));    
+    int size;
+    printf("Size pf matrix: ");
+    scanf("%d", &size);
+
+    printf("Enter matrix %dx%d:\n", size, size);
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            scanf("%lf", (*(A+i) + j));
+        }
     }
 
-    for(int i = 0; i < N; i++){
+    for(int i = 0; i < size; i++){
         int rowMinPos = 0, rowMaxPos = 0;
-        for(int j = 1; j < N; j++){
+        for(int j = 1; j < size; j++){
             rowMinPos = A[i][j] < A[i][rowMinPos] ? j : rowMinPos;
             rowMaxPos = A[i][j] > A[i][rowMaxPos] ? j : rowMaxPos;
         }
@@ -23,8 +30,8 @@ int main()
         A[i][rowMaxPos] = diagElem;
     }
 
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
             printf("%lf ", *(*(A+i) + j));
         }
         printf("\n");
