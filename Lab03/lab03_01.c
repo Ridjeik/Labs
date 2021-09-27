@@ -1,15 +1,20 @@
 #include <stdio.h>
 #include <limits.h>
 
+#define LIMIT 1000
+
 int main()
 {
-    const int N = 10;
-    double vector[N], num = 0, negSum = 0;
-    int minPos = 0, maxPos = 0;
+    double vector[LIMIT], num = 0, negSum = 0;
+    int minPos = 0, maxPos = 0, number = 0;
 
-    printf("Enter %i numbers: ", N);
+    printf("How many numbers should be in vector?");
+    scanf("%i", &number);
 
-    for(int i = 0; i < N; i++)
+
+    printf("Enter %i numbers: ", number);
+
+    for(int i = 0; i < number; i++)
     {
         scanf("%lf", &num);
 
@@ -28,7 +33,7 @@ int main()
         *(vector + maxPos) = *(vector + maxPos) / (-negSum);
     }
 
-    if(minPos >= 1 && minPos <= N-2)
+    if(minPos >= 1 && minPos <= number-2)
     {
         int temp = *(vector + minPos - 1); 
         *(vector + minPos - 1) = *(vector + minPos + 1);
@@ -37,7 +42,7 @@ int main()
 
 
     printf("Result: ");
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < number; i++)
     {
         printf("%lf ", vector[i]);
     }
