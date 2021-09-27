@@ -7,10 +7,11 @@ int main()
 {
     double vector[LIMIT], num = 0, negSum = 0;
     int minPos = 0, maxPos = 0, number = 0;
-
-    printf("How many numbers should be in vector?");
-    scanf("%i", &number);
-
+    
+    do{
+        printf("How many numbers should be in vector?");
+        scanf("%i", &number);
+    }while(number <= 0);
 
     printf("Enter %i numbers: ", number);
 

@@ -4,13 +4,13 @@
 
 int main()
 {
-
-
     double A[LIMIT][LIMIT];
 
     int size;
-    printf("Size pf matrix: ");
-    scanf("%d", &size);
+    do{
+        printf("Size pf matrix: ");
+        scanf("%d", &size);
+    }while(size <= 0);
 
     printf("Enter matrix %dx%d:\n", size, size);
     for(int i = 0; i < size; i++){
