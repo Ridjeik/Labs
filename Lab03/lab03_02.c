@@ -39,3 +39,5 @@ int main()
 
     return 0;
 }
+
+// *(*(A+3) + 4)s

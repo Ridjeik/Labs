@@ -45,7 +45,7 @@ int main()
     printf("Result: ");
     for (int i = 0; i < number; i++)
     {
-        printf("%lf ", vector[i]);
+        printf("%.2lf ", vector[i]);
     }
     printf("\n");
 

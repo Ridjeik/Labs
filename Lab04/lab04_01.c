@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #define MAX_LIMIT 50
 int main()
@@ -10,6 +11,7 @@ int main()
     fgets(sentence, MAX_LIMIT, stdin); 
     sentence[strlen(sentence)-1] = '\0';
     
+    sentence[0] = tolower(sentence[0]);
     char* delptr = strchr(sentence, '.');
     if(delptr) *delptr = '\0';
 
