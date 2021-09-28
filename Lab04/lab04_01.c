@@ -9,6 +9,9 @@ int main()
     printf("Enter sentence: ");
     fgets(sentence, MAX_LIMIT, stdin); 
     sentence[strlen(sentence)-1] = '\0';
+    
+    char* delptr = strchr(sentence, '.');
+    if(delptr) *delptr = '\0';
 
     printf("Enter keyword: ");
     fgets(keyword, MAX_LIMIT, stdin); 
