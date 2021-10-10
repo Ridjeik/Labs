@@ -11,7 +11,6 @@ int main()
     fgets(sentence, MAX_LIMIT, stdin); 
     sentence[strlen(sentence)-1] = '\0';
     
-    sentence[0] = tolower(sentence[0]);
     char* delptr = strchr(sentence, '.');
     if(delptr) *delptr = '\0';
 
@@ -23,28 +22,28 @@ int main()
     int key_point = 0;
 
     for(char* p = keyword; *p != '\0'; ++p){
-        if(strchr(key_chars, *p) == NULL){
-            key_chars[key_point] = *p;
+        if(strchr(key_chars, tolower(*p)) == NULL){
+            key_chars[key_point] = tolower(*p);
             ++key_point;
         }
     }
 
 
-    char* word = strtok(sentence, " ");
+    char* word = strtok(sentence, " ,\n");
 
     int match = 1;
+    int word_point = 0;
     while(word != NULL){
 
         char word_chars[MAX_LIMIT] = { 0 };
-        int word_point = 0;
+        word_point = 0;
 
         for(char* p = word; *p != '\0'; ++p){
-            if(strchr(word_chars, *p) == NULL){
-                word_chars[word_point] = *p;
+            if(strchr(word_chars, tolower(*p)) == NULL){
+                word_chars[word_point] = tolower(*p);
                 ++word_point;
             }
         }
-
 
         if(strlen(word_chars) == strlen(key_chars)){
             match = 1;
@@ -60,9 +59,7 @@ int main()
             }
             
         }
-
-
-        word = strtok(NULL, " ");
+        word = strtok(NULL, " ,\n");
     }
     if(!match){
         printf("No match");

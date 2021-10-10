@@ -2,6 +2,7 @@
 #include <math.h>
 #include <string.h>
 #include <time.h>
+#include <stdlib.h>
 
 #define MAX_FILE_NAME_LENGTH 50
 #define LOG_FILE "log.txt"
@@ -12,20 +13,16 @@ int main(){
     FILE *logFile = fopen(LOG_FILE, "a");
     char *errorMessage = "";
 
-
     time(&curr_time);
     char* time_str = ctime(&curr_time);
     *(strchr(time_str, '\n')) = '\0';
     fprintf(logFile, "[%s] Program started.\n", time_str);
 
-
     double X, Y, Z;
     char inputFileName[MAX_FILE_NAME_LENGTH];
 
-
     printf("Input file: ");
-    scanf("%s", inputFileName);
-    getchar();
+    gets(inputFileName);
 
     FILE *input = fopen(inputFileName, "rb");
 
@@ -78,8 +75,7 @@ int main(){
     char outputFileName[MAX_FILE_NAME_LENGTH];
 
     printf("Output file: ");
-    scanf("%s", outputFileName);
-    getchar();
+    gets(outputFileName);
 
     printf("Output format (t|b): ");
     char choice;
