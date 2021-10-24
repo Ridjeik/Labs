@@ -11,5 +11,6 @@ int main(){
     printf("Enter step: ");
     scanf("%lf", &h);
     tabulate(a, b, h);
+    tabulate2(a, b, h);
     getch();
 }
