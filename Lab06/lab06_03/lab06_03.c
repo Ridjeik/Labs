@@ -19,4 +19,6 @@ int main(){
     else{
         printf("No answer.");
     }
+    getch();
     return 0;
+}
