@@ -3,18 +3,20 @@
 #include "lab06_03_func.h"
 
 int main(){
-    int n, prod, I = 0;
-    scanf("%d", &n);
-    if(isAnswerExist(n)){
+    int N, prod, Q = 0;
+    printf("Number: ");
+    scanf("%d", &N);
+    if(isAnswerExist(N)){
         do{
-            I++;
-            POD(I, prod);
-        }while(prod != n);
+            Q++;
+            int temp = Q;
+            POD(Q, prod);
+            Q = temp;
+        }while(prod != N);
 
-        printf("%d", I);
+        printf("Answer: %d", Q);
     }
     else{
         printf("No answer.");
     }
     return 0;
-}
