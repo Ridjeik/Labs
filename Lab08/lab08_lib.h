@@ -1,6 +1,6 @@
 #ifndef LAB08
 #define LAB08
-#define MIDDLE_STEPS
+//#define MIDDLE_STEPS
 
 struct Book
 {
@@ -52,7 +52,7 @@ void formTable(struct Book books[], int size);
 double averagePrice(struct Book books[], int size);
 void getBooksBelowAverage(struct Book input[], int input_size, struct Book output[], int * output_size);
 void sortBooksBySurname(struct Book input[], int input_size, struct Book output[], int * output_size);
-void performActions(struct Book input[], int input_size, struct Book output[], int * output_size, void (*actions[])(struct Book[], int , struct Book[], int*), int actions_size);
+void performActions(struct Book input[], int input_size, struct Book output[], int * output_size,...);
 
 #pragma endregion
 

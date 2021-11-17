@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "lab08_lib.h"
 
 void arrcpy(struct Book dest[], struct Book source[], int size){
@@ -134,7 +135,10 @@ struct Book strToBook(char str[]){
 
 void performActions(struct Book input[], int input_size,
                     struct Book output[], int * output_size,
-                    void (*actions[])(struct Book[], int , struct Book[], int*), int actions_size){
+                    ...){
+
+    va_list params;
+    va_start(params, output_size);
 
     arrcpy(output, input, input_size);
     *output_size = input_size;
@@ -142,15 +146,19 @@ void performActions(struct Book input[], int input_size,
     struct Book tmp[MAX_BOOK_COUNT];
     int tmp_size;
 
-    for(int i = 0; i < actions_size; i++){
+    void (*action)(struct Book[], int , struct Book[], int *);
+
+    while(action = va_arg(params, void (*)(struct Book[], int , struct Book[], int *))){
         #ifdef MIDDLE_STEPS
         formTable(output, *output_size);
         #endif
-        actions[i](output, *output_size, tmp, &tmp_size);
+        action(output, *output_size, tmp, &tmp_size);
         arrcpy(output, tmp, tmp_size);
         *output_size = tmp_size;
-        tmp_size = 0;    
+        tmp_size = 0;
     }
+
+    va_end(params);
 }
 
 /*----------------------------------------------------Actions---------------------------------------------------------*/
