@@ -1,6 +1,13 @@
 #ifndef LAB08
 #define LAB08
-//#define MIDDLE_STEPS
+
+#define MAX_NAME_LEN 20
+#define MAX_SURNAME_LEN 20
+#define MAX_FULLNAME_LEN ((MAX_NAME_LEN) + (MAX_SURNAME_LEN))
+#define MAX_BOOK_COUNT 100
+#define MAX_LINE_SIZE 256
+#define DEFAULT_FILE_PATH "books.txt"
+
 
 struct Book
 {
@@ -9,18 +16,13 @@ struct Book
     double price;
     struct Author
     {
-        char name[20];
-        char surname[20];
-        char fullName[40];
+        char name[MAX_NAME_LEN];
+        char surname[MAX_SURNAME_LEN];
     }   author;
     char title[50];
 };
 
 #pragma region Macros
-
-#define MAX_BOOK_COUNT 100
-#define MAX_LINE_SIZE 256
-#define FILE_PATH "books.txt"
 
 #define REPEAT_CHAR(ch, i) \
     for(int z = 0; z < (i); z++){\
@@ -46,13 +48,13 @@ struct Book
 
 #pragma region Functions
 
-void getBooksFromFile(char fileName[], struct Book output[], int* output_size);
+void arrcpy(struct Book dest[], struct Book source[], int size);
+int readBooksFromTextFile(char fileName[], struct Book output[], int* output_size);
+int readBooksFromBinFile(char fileName[], struct Book output[], int* output_size);
+void writeBooksToBinFile(char fileName[], struct Book input[], int input_size);
 struct Book strToBook(char str[]);
 void formTable(struct Book books[], int size);
-double averagePrice(struct Book books[], int size);
-void getBooksBelowAverage(struct Book input[], int input_size, struct Book output[], int * output_size);
-void sortBooksBySurname(struct Book input[], int input_size, struct Book output[], int * output_size);
-void performActions(struct Book input[], int input_size, struct Book output[], int * output_size,...);
+void performActions(struct Book input[], int input_size, struct Book output[], int * output_size, int printMiddleSteps, ...);
 
 #pragma endregion
 
