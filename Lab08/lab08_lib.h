@@ -7,7 +7,7 @@
 #define MAX_BOOK_COUNT 100
 #define MAX_LINE_SIZE 256
 #define DEFAULT_FILE_PATH "books.txt"
-
+#define MAX_ERROR_LENGTH 50
 
 struct Book
 {
@@ -51,6 +51,7 @@ struct Book
 void arrcpy(struct Book dest[], struct Book source[], int size);
 int readBooksFromTextFile(char fileName[], struct Book output[], int* output_size);
 int readBooksFromBinFile(char fileName[], struct Book output[], int* output_size);
+void writeBooksToTextFile(char fileName[], struct Book input[], int input_size);
 void writeBooksToBinFile(char fileName[], struct Book input[], int input_size);
 struct Book strToBook(char str[]);
 void formTable(struct Book books[], int size);

@@ -180,6 +180,16 @@ void writeBooksToBinFile(char fileName[], struct Book input[], int input_size){
     fclose(fout);
 }
 
+void writeBooksToTextFile(char fileName[], struct Book input[], int input_size){
+    FILE *fout = fopen(fileName, "w");
+
+    for(int i = 0; i < input_size; i++){
+        fprintf(fout, "%s %s,%s,%d,%d,%.2lf\n", input[i].author.name, input[i].author.surname, input[i].title, input[i].pubYear, input[i].pageCount, input[i].price);
+    }
+
+    fclose(fout);
+}
+
 #pragma endregion
 
 void performActions(struct Book input[], int input_size, struct Book output[], int * output_size, int printMiddleSteps, ...){
