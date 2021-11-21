@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 #include <string.h>
 #include "lab08_lib.h"
 #include "actions.h"
@@ -59,4 +60,8 @@ int main(int argc, char *argv[]){
         if(textOutput) writeBooksToTextFile(outputFilePath, result, result_size);
         else writeBooksToBinFile(outputFilePath, result, result_size);
     }
+
+    getch();
+    
+    return 0;
 }

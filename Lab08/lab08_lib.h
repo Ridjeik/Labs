@@ -11,15 +11,15 @@
 
 struct Book
 {
-    int pubYear;
-    int pageCount;
-    double price;
+    char title[50];
     struct Author
     {
         char name[MAX_NAME_LEN];
         char surname[MAX_SURNAME_LEN];
     }   author;
-    char title[50];
+    double price;
+    int pubYear;
+    int pageCount;
 };
 
 #pragma region Macros
