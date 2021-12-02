@@ -65,4 +65,10 @@ typedef struct Command{
     void (*commandAction)(const CLArgs *const args);
 } Command;
 
+typedef int (*BookComparer)(Book a, Book b);
+
+CLArgs* parseCommandLine(char *str, char **command);
+void executeLine(char *line);
+void launchConsole();
+
 #endif

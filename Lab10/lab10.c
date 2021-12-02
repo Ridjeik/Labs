@@ -148,6 +148,34 @@ Book strToBook(char str[]){
 
 #pragma endregion
 
+#pragma region Comparers
+
+int authorsNameBookComparer(Book a, Book b){
+    return strcmp(a.author.name, b.author.name);
+}
+
+int authorsSurnameBookComparer(Book a, Book b){
+    return strcmp(a.author.surname, b.author.surname);
+}
+
+int titleBookComaprer(Book a, Book b){
+    return strcmp(a.title, b.title);
+}
+
+int yearBookComparer(Book a, Book b){
+    return a.pubYear == b.pubYear ? 0 : a.pubYear > b.pubYear ? 1 : -1; 
+}
+
+int pageBookComparer(Book a, Book b){
+    return a.pageCount == b.pageCount ? 0 : a.pageCount > b.pageCount ? 1 : -1; 
+}
+
+int priceBookComparer(Book a, Book b){
+    return a.price == b.price ? 0 : a.price > b.price ? 1 : -1; 
+}
+
+#pragma endregion
+
 #pragma region CommandsDeclarations
 
 void exitProgram(const CLArgs *const args);
@@ -155,15 +183,15 @@ void clearConsole(const CLArgs *const args);
 void getHelp(const CLArgs *const args);
 void createList(const CLArgs *const args);
 void getLists(const CLArgs *const args);
-void addElement(const CLArgs *const args); //TODO: sort-in-time param
+void addElement(const CLArgs *const args);
 void switchList(const CLArgs *const args);
 void formTable(const CLArgs *const args);
 void loadFromFile(const CLArgs *const args);
 void countList(const CLArgs *const args);
-//TODO: delete
-//TODO: save
-//TODO: sort
+void deleteList(const CLArgs *const args);
+void sortList(const CLArgs *const args);
 //TODO: filter
+//TODO: save
 //TODO: dumpall?
 //TODO: restore?
 
@@ -254,6 +282,26 @@ static Command commands[] = {
         "count",
         "Counts the elements in the current list.\n\n",
         countList
+    },
+
+    {
+        "delete",
+        "Deletes the list with specified name.\n\n"
+        "Syntax: delete [<name>]\n\n"
+        "\t<name> - name of the list to delete.\n\n",
+        deleteList
+    },
+
+    {
+        "sortby",
+        "Sorts list by the given parameters.\n\n"
+        "Syntax: sortby [<modifiers>] <target>\n\n"
+        "\t<target> - field of book which will be compared. \n"
+        "\tCan be one from this:\n"
+        "\tname\n\tsurname\n\ttitle\n\tyear\n\tpages\n\tprice\n\n"
+        "Modifiers:\n\n"
+        "\t-d, --descending - to specify that the list must be sorted in descending order.\n\n",
+        sortList
     }
 };
 
@@ -289,6 +337,41 @@ int findList(const char *const listName){
         }
     }
     return -1;
+}
+
+void deleteListRecursively(List *list){
+    ListItem *iter = list->head;
+    ListItem *next = NULL;
+    while(iter){
+        next = iter->next;
+        free(iter);
+        iter = next;
+    }
+}
+
+int countListElements(List *list){
+    if(!list) return 0;
+    int res = 0;
+    for(ListItem *iter = currentList->head; iter != NULL; iter = iter->next) res++;
+    return res;
+}
+
+void sortListUsingComparer(List *list, BookComparer comparer, int descending){
+    int size = countListElements(list);
+    if(!list || size == 0 || size == 1) return;
+    
+    ListItem *iter; Book temp;
+    for(int i = 0; i < size; i++){
+        iter = list->head;
+        while(iter->next){
+            if((!descending && comparer(iter->data, iter->next->data) > 0) || (descending && comparer(iter->data, iter->next->data) < 0)){
+                temp = iter->data;
+                iter->data = iter->next->data;
+                iter->next->data = temp;
+            }
+            iter = iter->next;
+        }
+    }
 }
 
 #pragma endregion
@@ -359,26 +442,21 @@ void createList(const CLArgs *const args){
         return;
     }
 
-    char choice[3];
-    printf("Are you sure to create list with name \"%s\"?(Y|N) ", newList.name);
-    gets(choice);
-    fflush(stdin);
-    if(tolower(*trim(choice)) == 'y'){
-        listCount++;
-        List *newListsArr = (List*)realloc(lists, sizeof(List) * listCount);
-        if(!newListsArr){
-            printf("Error creating a list.\n");
-            return;
-        }
-        newListsArr[listCount-1] = newList;
-        lists = newListsArr;
-        printf("List \"%s\" successfully created.\n", newList.name);
-        if(select || !currentList){
-            printf("Switching to new list.\n");
-            currentListIndex = listCount - 1;
-        }
-        currentList = lists + currentListIndex;
+    listCount++;
+    List *newListsArr = (List*)realloc(lists, sizeof(List) * listCount);
+    if(!newListsArr){
+        printf("Error creating a list.\n");
+        return;
     }
+    newListsArr[listCount-1] = newList;
+    lists = newListsArr;
+    printf("List \"%s\" successfully created.\n", newList.name);
+    if(select || !currentList){
+        printf("Switching to new list.\n");
+        currentListIndex = listCount - 1;
+    }
+    currentList = lists + currentListIndex;
+    
     
     printf("\n");
 }
@@ -505,7 +583,7 @@ void formTable(const CLArgs *const args){
 }
 
 void switchList(const CLArgs *const args){
-    if(args->argc >= 2){
+    if(args && args->argc >= 2){
         printf("Too many parameters.\n\n");
         return;
     }
@@ -520,13 +598,11 @@ void switchList(const CLArgs *const args){
     int listIndex = -1;
 
     if((listIndex = findList(listName)) != -1){
-
-            printf("Switching to list \"%s\".\n\n", listName);
-            currentListIndex = listIndex;
-            currentList = lists + currentListIndex;
-            return;
+        printf("Switching to list \"%s\".\n\n", listName);
+        currentListIndex = listIndex;
+        currentList = lists + currentListIndex;
+        return;
     }
-    
 
     printf("No list with name \"%s\".\n\n", listName);
 }
@@ -632,10 +708,99 @@ void countList(const CLArgs *const args){
         printf("There are no list. Create one by using \"create\" command.\n\n");
         return;
     }
-    int res = 0;
-    for(ListItem *iter = currentList->head; iter != NULL; iter = iter->next) res++;
+    int res = countListElements(currentList);
     if(res == 0) printf("There are no elements in list.\n\n");
     else printf("There are %d elements in list.\n\n", res);
+}
+
+void deleteList(const CLArgs *const args){
+    if(!currentList){
+        printf("No lists to delete.\n\n");
+        return;
+    }
+    if(args && args->argc >= 2){
+        printf("Too many parameters.\n\n");
+        return;
+    }
+
+    char listName[MAX_LISTNAME_LEN];
+    if(!args || args->argc == 0){
+        prompt("Enter name of the list to be deleted: ", listName);
+    }
+    else if(args->argc == 1){
+        strcpy(listName, args->argv[0]);
+    }
+
+    int listIndex = findList(listName);
+    if(listIndex == -1){
+        printf("No list with name \"%s\".\n\n", listName);
+        return;
+    }
+
+    deleteListRecursively(lists + listIndex);
+
+    for(int i = listIndex + 1; i < listCount; i++){
+        lists[i-1] = lists[i];
+    }
+
+    free(lists + listCount - 1);
+    listCount--;
+    
+    List *newListArr = listCount ? realloc(lists, listCount) : NULL;
+    
+    lists = newListArr;
+
+    if(!lists) currentListIndex = -1;
+    else if(currentListIndex == listIndex){
+        currentListIndex = 0;
+    }
+    else if(currentListIndex > listIndex) currentListIndex--;
+
+    currentList = lists ? lists + currentListIndex : NULL;
+    printf("Successfuly deleted list with name \"%s\".\n\n", listName);
+}
+
+void sortList(const CLArgs *const args){
+    if(!currentList){
+        printf("No list to sort. Create one by using \"create\" command.\n\n");
+        return;
+    }
+
+    if(!args || args->argc == 0){
+        printf("Specify sort's target. To get list of available targets execute \"help sortby\".\n\n");
+        return;
+    }
+
+    if(args->argc >= 3){
+        printf("Too many parameters.\n\n");
+        return;
+    }
+
+    char *sortTarget;
+    int descending = 0;
+
+    if(args->argc == 1){
+        sortTarget = args->argv[0];
+    }
+    else if(args->argc == 2){
+        int desPos = -1;
+        if((desPos = findParam(args, "-d")) != -1 || (desPos = findParam(args, "--descending")) != -1){
+            descending = 1;
+            sortTarget = args->argv[desPos == 0 ? 1 : 0];
+        }
+    }
+
+    if(!strcmp(sortTarget, "price")) sortListUsingComparer(currentList, priceBookComparer, descending);
+    else if(!strcmp(sortTarget, "name")) sortListUsingComparer(currentList, authorsNameBookComparer, descending);
+    else if(!strcmp(sortTarget, "surname")) sortListUsingComparer(currentList, authorsSurnameBookComparer, descending);
+    else if(!strcmp(sortTarget, "pages")) sortListUsingComparer(currentList, pageBookComparer, descending);
+    else if(!strcmp(sortTarget, "year")) sortListUsingComparer(currentList, yearBookComparer, descending);
+    else if(!strcmp(sortTarget, "title")) sortListUsingComparer(currentList, titleBookComaprer, descending);
+    else{
+        printf("Specify correct sort's target. To get list of available targets execute \"help sortby\".\n\n");
+        return;
+    }
+    printf("List sorted successfully.\n\n");
 }
 
 #pragma endregion
@@ -662,9 +827,6 @@ CLArgs* parseCommandLine(char *str, char **command){
 
     int inQuote = 0;
     char *lexemStart = ltrim(commandArgSepPos + 1);
-    #ifdef DEBUG
-    printf("Args: %s\n", lexemStart);
-    #endif
     char *curr = lexemStart;
     while( *curr != 0 ){
         
@@ -675,17 +837,9 @@ CLArgs* parseCommandLine(char *str, char **command){
             inQuote = 0;
         } 
 
-        #ifdef DEBUG
-        printf("Looking at char '%c' - inQ: %d\n", *curr, inQuote);
-        #endif
-
         if(!inQuote && isspace(*curr)){
             *curr = 0;
             result->argv[result->argc++] = qtrim(lexemStart);
-
-            #ifdef DEBUG
-            printf("Found %s\n", result->argv[result->argc - 1]);
-            #endif
 
             curr = ltrim(curr + 1);
             lexemStart = curr; 
@@ -694,10 +848,6 @@ CLArgs* parseCommandLine(char *str, char **command){
             curr++;
             if(*curr == 0){
                 result->argv[result->argc++] = lexemStart;
-
-                #ifdef DEBUG
-                printf("Found %s\n", result->argv[result->argc - 1]);
-                #endif
             }
         }
     }
