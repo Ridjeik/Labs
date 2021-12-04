@@ -1,6 +1,9 @@
 #ifndef LAB10
 #define LAB10
 
+#include <stdarg.h>
+#include <stddef.h>
+
 #define max(a, b) a > b ? a : b
 
 #define REPEAT_CHAR(ch, i) \
@@ -26,7 +29,7 @@
 #define MAX_SURNAME_LEN 20
 #define MAX_COMMAND_LEN 20
 #define MAX_ARGS_COUNT 20
-#define MAX_DESCRIPTION_LEN 512
+#define MAX_DESCRIPTION_LEN 1024
 #define MAX_LISTNAME_LEN 20
 #define MAX_TITLE_LEN 50
 #define MAX_LINE_LEN 256
@@ -66,9 +69,13 @@ typedef struct Command{
 } Command;
 
 typedef int (*BookComparer)(Book a, Book b);
+typedef int (*BookPredicate)(Book a, va_list va);
+typedef double (*BookSelector)(Book a, va_list va);
 
 CLArgs* parseCommandLine(char *str, char **command);
 void executeLine(char *line);
+void executeFile(char *fileName);
 void launchConsole();
+void cls();
 
 #endif

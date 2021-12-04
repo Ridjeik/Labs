@@ -1,0 +1,8 @@
+create lab10_list;
+load books.txt; show;
+filter price --aboveaverage; show;
+sortby surname; show;
+insert; show;
+filter price --lessthan 5; show;
+save result.txt
+exit
