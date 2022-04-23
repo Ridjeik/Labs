@@ -1,0 +1,10 @@
+debug/comparasionwindow.o
+debug/main.o
+debug/newtriangledialog.o
+debug/triangle.o
+debug/triangleviewer.o
+debug/viewwidget.o
+debug/moc_comparasionwindow.o
+debug/moc_newtriangledialog.o
+debug/moc_triangleviewer.o
+debug/moc_viewwidget.o

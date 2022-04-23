@@ -1,0 +1,10 @@
+release/comparasionwindow.o
+release/main.o
+release/newtriangledialog.o
+release/triangle.o
+release/triangleviewer.o
+release/viewwidget.o
+release/moc_comparasionwindow.o
+release/moc_newtriangledialog.o
+release/moc_triangleviewer.o
+release/moc_viewwidget.o
