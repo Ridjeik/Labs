@@ -1,0 +1,6 @@
+create A
+sortby name
+sortby title
+show
+
+exit --success

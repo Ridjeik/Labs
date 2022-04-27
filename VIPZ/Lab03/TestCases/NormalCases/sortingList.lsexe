@@ -1,0 +1,17 @@
+create A
+load books.txt
+show
+sortby name; show;
+sortby surname; show;
+sortby title; show;
+sortby year; show;
+sortby pages; show;
+sortby price; show;
+sortby name -d; show;
+sortby surname -d; show;
+sortby title -d; show;
+sortby year -d; show;
+sortby pages -d; show;
+sortby price -d; show;
+
+exit --success

@@ -1,0 +1,9 @@
+create A
+load empty.txt
+show
+
+create B --switch
+load whitespaces.txt
+show
+
+exit --success

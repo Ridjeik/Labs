@@ -1,0 +1,10 @@
+help cmd
+
+create A
+load books.txt
+
+filter name --aboveaverage
+
+sortby coolness
+
+exit --success

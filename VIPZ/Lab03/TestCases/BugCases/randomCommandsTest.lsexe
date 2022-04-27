@@ -1,0 +1,39 @@
+create A
+load books.txt
+show
+
+filter name --startswith A; show; delete A; create A; load books.txt;
+filter surname --startswith A; show; delete A; create A; load books.txt;
+filter title --startswith A; show; delete A; create A; load books.txt;
+filter name --notstartswith A; show; delete A; create A; load books.txt;
+filter surname --notstartswith A; show; delete A; create A; load books.txt;
+filter title --notstartswith A; show; delete A; create A; load books.txt;
+filter year --lessthan 2000; show; delete A; create A; load books.txt;
+filter pages --lessthan 2000; show; delete A; create A; load books.txt;
+filter price --lessthan 2000; show; delete A; create A; load books.txt;
+filter year --morethan 2000; show; delete A; create A; load books.txt;
+filter pages --morethan 2000; show; delete A; create A; load books.txt;
+filter price --morethan 2000; show; delete A; create A; load books.txt;
+filter year --belowaverage; show; delete A; create A; load books.txt;
+filter pages --belowaverage; show; delete A; create A; load books.txt;
+filter price --belowaverage; show; delete A; create A; load books.txt;
+filter year --aboveaverage; show; delete A; create A; load books.txt;
+filter pages --aboveaverage; show; delete A; create A; load books.txt;
+filter price --aboveaverage; show; delete A; create A; load books.txt;   
+
+show
+sortby name; show;
+sortby surname; show;
+sortby title; show;
+sortby year; show;
+sortby pages; show;
+sortby price; show;
+sortby name -d; show;
+sortby surname -d; show;
+sortby title -d; show;
+sortby year -d; show;
+sortby pages -d; show;
+sortby price -d; show;
+
+
+exit --success

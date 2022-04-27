@@ -1,0 +1,7 @@
+create A
+filter title --startswith A
+filter age --belowaverage
+
+show
+
+exit --success

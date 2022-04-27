@@ -1,0 +1,6 @@
+create A
+load books.txt
+count
+filter price --belowaverage
+count
+exit --success

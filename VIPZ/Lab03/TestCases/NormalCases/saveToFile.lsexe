@@ -1,0 +1,7 @@
+create A
+load books.txt
+
+filter title --startswith S
+
+save result.txt
+exit --success

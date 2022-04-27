@@ -1,0 +1,6 @@
+create A
+load largefile.txt
+
+show
+
+exit --success

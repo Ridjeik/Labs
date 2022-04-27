@@ -1,0 +1,10 @@
+create A;
+create B;
+load books.txt
+switch B
+load books.txt
+limit 7
+show
+switch A
+show
+exit --success

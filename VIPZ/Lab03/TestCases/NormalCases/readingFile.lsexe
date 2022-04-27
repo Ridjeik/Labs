@@ -1,0 +1,4 @@
+create A
+load books.txt
+show
+exit --success

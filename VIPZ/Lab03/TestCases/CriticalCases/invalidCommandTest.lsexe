@@ -1,0 +1,11 @@
+hlp 
+
+crate A
+
+delt Be
+
+filtr
+
+notExistingCommand A
+
+exit --success

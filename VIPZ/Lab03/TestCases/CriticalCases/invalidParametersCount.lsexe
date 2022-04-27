@@ -1,0 +1,13 @@
+help sortby filter
+
+create A B
+
+create A
+
+load books.txt books.txt
+
+
+load books.txt
+sortby name surname
+
+exit --success

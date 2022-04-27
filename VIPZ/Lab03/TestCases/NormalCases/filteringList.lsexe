@@ -1,0 +1,24 @@
+create A
+load books.txt
+show
+
+filter name --startswith A; show; delete A; create A; load books.txt;
+filter surname --startswith A; show; delete A; create A; load books.txt;
+filter title --startswith A; show; delete A; create A; load books.txt;
+filter name --notstartswith A; show; delete A; create A; load books.txt;
+filter surname --notstartswith A; show; delete A; create A; load books.txt;
+filter title --notstartswith A; show; delete A; create A; load books.txt;
+filter year --lessthan 2000; show; delete A; create A; load books.txt;
+filter pages --lessthan 2000; show; delete A; create A; load books.txt;
+filter price --lessthan 2000; show; delete A; create A; load books.txt;
+filter year --morethan 2000; show; delete A; create A; load books.txt;
+filter pages --morethan 2000; show; delete A; create A; load books.txt;
+filter price --morethan 2000; show; delete A; create A; load books.txt;
+filter year --belowaverage; show; delete A; create A; load books.txt;
+filter pages --belowaverage; show; delete A; create A; load books.txt;
+filter price --belowaverage; show; delete A; create A; load books.txt;
+filter year --aboveaverage; show; delete A; create A; load books.txt;
+filter pages --aboveaverage; show; delete A; create A; load books.txt;
+filter price --aboveaverage; show; delete A; create A;
+
+exit --success

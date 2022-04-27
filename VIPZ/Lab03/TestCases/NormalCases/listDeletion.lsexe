@@ -1,0 +1,14 @@
+create A;
+create B;
+create C;
+create ABC;
+create Foo;
+create Bar;
+
+delete Bar
+
+delete A
+
+delete Foo
+
+exit --success

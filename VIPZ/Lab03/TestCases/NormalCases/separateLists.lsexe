@@ -1,0 +1,9 @@
+create A;
+create B;
+create C;
+create ABC;
+create Foo;
+create Bar;
+
+lists
+exit --success
