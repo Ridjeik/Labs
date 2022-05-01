@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MatrixLib</id>
+    <version>1.0.0</version>
+    <authors>MatrixLib</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="F:\Study\Labs\NM\lab06\SystemSolution4\SystemSolution4\MatrixLib\bin\Debug\net6.0\MatrixLib.dll" target="lib\net6.0\MatrixLib.dll" />
+  </files>
+</package>

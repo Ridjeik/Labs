@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SystemSolution4/1.0.0": {
+        "dependencies": {
+          "MatrixLib": "1.0.0"
+        },
+        "runtime": {
+          "SystemSolution4.dll": {}
+        }
+      },
+      "MatrixLib/1.0.0": {
+        "runtime": {
+          "MatrixLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SystemSolution4/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MatrixLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
