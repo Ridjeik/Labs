@@ -13,6 +13,7 @@ public:
     double getCost() const;
     void print(QLabel* label) const;
     std::string getInfoString() const;
+
 };
 
 #endif // PARCEL_H

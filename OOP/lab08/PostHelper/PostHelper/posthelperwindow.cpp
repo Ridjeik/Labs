@@ -74,6 +74,7 @@ void PostHelperWindow::on_confirmationButton_clicked()
             delete lastParcel;
             lastParcel = toOutput;
             stream << toOutput->getInfoString() << "\n";
+            stream.flush();
             toOutput->print(ui->usedClassLabel);
         }
     }
@@ -93,6 +94,7 @@ void PostHelperWindow::on_confirmationButton_clicked()
             delete lastParcelWithDefinedValue;
             lastParcelWithDefinedValue = toOutput;
             stream << toOutput->getInfoString() << "\n";
+            stream.flush();
             toOutput->print(ui->usedClassLabel);
         }
     }
@@ -111,6 +113,7 @@ void PostHelperWindow::on_confirmationButton_clicked()
             delete lastElectronicTransfer;
             lastElectronicTransfer = toOutput;
             stream << toOutput->getInfoString() << "\n";
+            stream.flush();
             toOutput->print(ui->usedClassLabel);
         }
     }
@@ -126,6 +129,7 @@ void PostHelperWindow::on_pushButton_clicked()
         if(btn == QMessageBox::Ok)
         {
             stream << toOutput.getInfoString() << "\n";
+            stream.flush();
             toOutput.print(ui->usedClassLabel);
         }
     }
@@ -136,6 +140,7 @@ void PostHelperWindow::on_pushButton_clicked()
         if(btn == QMessageBox::Ok)
         {
             stream << toOutput.getInfoString() << "\n";
+            stream.flush();
             toOutput.print(ui->usedClassLabel);
         }
     }
@@ -146,6 +151,7 @@ void PostHelperWindow::on_pushButton_clicked()
         if(btn == QMessageBox::Ok)
         {
             stream << toOutput.getInfoString() << "\n";
+            stream.flush();
             toOutput.print(ui->usedClassLabel);
         }
     }

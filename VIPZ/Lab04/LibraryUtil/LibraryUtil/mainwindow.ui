@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LibraryUtil</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMenuBar
+{
+	background-color:#eee;
+}
+
+QWidget#centralwidget
+{
+	background-color: #ddd;
+}
+
+QPushButton
+{
+	margin: 0;
+	padding: 15px 25px;
+	border: none;
+	background-color: #ddd;
+}
+
+QPushButton::hover
+{
+	background-color:#bbb;
+}
+
+QTabWidget::tab-bar
+{
+	background: #eee;
+}
+QTabBar::tab
+{
+	background: #ccc;
+	padding: 5px 8px;
+	border-left: 1px solid #aaa;
+}
+
+QTabWidget::pane{background:#eee;}
+
+QTabBar::tab::selected, QTabBar::tab::hover
+{
+	background: #bbb;
+}
+
+QDialog QPushButton{
+	background: #ddd;
+	border: none;
+	padding: 8px 30px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="createButton">
+        <property name="text">
+         <string>Створити новий список</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sortButton">
+        <property name="text">
+         <string>Сортувати поточний список</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="filterButton">
+        <property name="text">
+         <string>Фільтрувати поточний список</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="text">
+         <string>Додати нову книгу</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="topButton">
+        <property name="text">
+         <string>Вибрати верхні елементи</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="listsTabsWindow">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionLoad_to_current_list"/>
+    <addaction name="actionSave_current_list_to"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="actionLoad_to_current_list">
+   <property name="text">
+    <string>Завантажити в поточний список</string>
+   </property>
+  </action>
+  <action name="actionSave_current_list_to">
+   <property name="text">
+    <string>Зберегти поточний список </string>
+   </property>
+  </action>
+  <action name="actionSet_font">
+   <property name="text">
+    <string>Змінити шрифт</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Вийти</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

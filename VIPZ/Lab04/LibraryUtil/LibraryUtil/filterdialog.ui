@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FilterDialog</class>
+ <widget class="QDialog" name="FilterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>267</width>
+    <height>316</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Фільтрація</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	background: #ddd;
+	border: none;
+	padding: 8px 30px;
+}
+
+QPushButton::hover
+{
+	background: #bbb;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Ціль фільтрації:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Ім'я автора</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Прізвище автора</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Назва книги</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Рік видання</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>К-ть сторінок</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ціна книги</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Критерій фільтрації:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="startsWithBtn">
+       <property name="text">
+        <string>Що починається на</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="startsWithEdit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="notStartsWithBtn">
+       <property name="text">
+        <string>Що не починається на</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="notStartsWithEdit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QRadioButton" name="belowAverageBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Що нижче середнього</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QRadioButton" name="moreThanBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Що вище, ніж</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="moreThanEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QRadioButton" name="lessThanBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Що нижче, ніж</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lessThanEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="aboveAverageBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Що вище середнього</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="text">
+        <string>Підтвердити</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Відмінити</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

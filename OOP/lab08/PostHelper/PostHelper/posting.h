@@ -3,6 +3,7 @@
 
 #include "person.h"
 #include <QLabel>
+
 class Posting
 {
 protected:
