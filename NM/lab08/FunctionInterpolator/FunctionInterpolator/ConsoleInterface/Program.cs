@@ -37,6 +37,6 @@ foreach (var x in my_data.Select(pair => pair.Key))
 
 
 Console.WriteLine("\n\nЗначення полiномiв в точцi x0 \n");
-var x0 = 3.522M;
+var x0 = 0.115M;
 
 Console.WriteLine($"{x0:0.000} => Лагранж: {a.AtPoint(x0):0.000} ; Ньютон: {b.AtPoint(x0):0.000}");

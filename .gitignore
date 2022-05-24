@@ -1,0 +1,8 @@
+*.txt
+*.exe
+*.bat
+*.bin
+*.o
+.vscode/
+*.tmp
+build-*/
