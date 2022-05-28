@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionApproximator.Console", "FunctionApproximator\FunctionApproximator.Console.csproj", "{7BB685F3-7E75-4605-BE10-6B6C3E8CC9F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixLib", "MatrixLib\MatrixLib.csproj", "{5E7A887C-8847-4DA6-AF11-BADDA5ECA69D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolynomLib", "PolynomLib\PolynomLib.csproj", "{66BBD700-3892-47FE-8314-ECA2057BF89D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApproximator.GUI", "FunctionApproximator.GUI\FunctionApproximator.GUI.csproj", "{B3693609-A347-43AD-883F-4F070928DC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApproximatorLib", "FunctionInterpolatorLib\FunctionApproximatorLib.csproj", "{4C11C3E5-8505-43D5-87C3-0845C0B17AE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BB685F3-7E75-4605-BE10-6B6C3E8CC9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB685F3-7E75-4605-BE10-6B6C3E8CC9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB685F3-7E75-4605-BE10-6B6C3E8CC9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB685F3-7E75-4605-BE10-6B6C3E8CC9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7A887C-8847-4DA6-AF11-BADDA5ECA69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7A887C-8847-4DA6-AF11-BADDA5ECA69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7A887C-8847-4DA6-AF11-BADDA5ECA69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7A887C-8847-4DA6-AF11-BADDA5ECA69D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66BBD700-3892-47FE-8314-ECA2057BF89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BBD700-3892-47FE-8314-ECA2057BF89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BBD700-3892-47FE-8314-ECA2057BF89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BBD700-3892-47FE-8314-ECA2057BF89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3693609-A347-43AD-883F-4F070928DC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3693609-A347-43AD-883F-4F070928DC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3693609-A347-43AD-883F-4F070928DC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3693609-A347-43AD-883F-4F070928DC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C11C3E5-8505-43D5-87C3-0845C0B17AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C11C3E5-8505-43D5-87C3-0845C0B17AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C11C3E5-8505-43D5-87C3-0845C0B17AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C11C3E5-8505-43D5-87C3-0845C0B17AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {141EFB5A-0A31-4E73-8657-41B4B35DA030}
+	EndGlobalSection
+EndGlobal

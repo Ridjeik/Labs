@@ -1,0 +1,130 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FunctionApproximator.GUI/1.0.0": {
+        "dependencies": {
+          "FunctionApproximatorLib": "1.0.0",
+          "ScottPlot.WPF": "4.1.45"
+        },
+        "runtime": {
+          "FunctionApproximator.GUI.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0": {},
+      "Microsoft.Win32.SystemEvents/4.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0"
+        }
+      },
+      "ScottPlot/4.1.45": {
+        "dependencies": {
+          "System.Drawing.Common": "4.6.1"
+        },
+        "runtime": {
+          "lib/net5.0/ScottPlot.dll": {
+            "assemblyVersion": "4.1.45.0",
+            "fileVersion": "4.1.45.0"
+          }
+        }
+      },
+      "ScottPlot.WPF/4.1.45": {
+        "dependencies": {
+          "ScottPlot": "4.1.45"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/ScottPlot.WPF.dll": {
+            "assemblyVersion": "4.1.45.0",
+            "fileVersion": "4.1.45.0"
+          }
+        }
+      },
+      "System.Drawing.Common/4.6.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0",
+          "Microsoft.Win32.SystemEvents": "4.6.0"
+        }
+      },
+      "FunctionApproximatorLib/1.0.0": {
+        "dependencies": {
+          "MatrixLib": "1.0.0",
+          "PolynomLib": "1.0.0"
+        },
+        "runtime": {
+          "FunctionApproximatorLib.dll": {}
+        }
+      },
+      "MatrixLib/1.0.0": {
+        "runtime": {
+          "MatrixLib.dll": {}
+        }
+      },
+      "PolynomLib/1.0.0": {
+        "runtime": {
+          "PolynomLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionApproximator.GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TsETIgVJb/AKoYfSP+iCxkuly5d3inZjTdx/ItZLk2CxY85v8083OBS3uai84kK3/baLnS5/b5XGs6zR7SuuHQ==",
+      "path": "microsoft.netcore.platforms/3.0.0",
+      "hashPath": "microsoft.netcore.platforms.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Edg+pFW5C8WJb680Za2kTV8TqUi6Ahl/WldRVoOVJ23UQLpDHFspa+umgFjkWZw24ETsU99Cg+ErZz683M4chg==",
+      "path": "microsoft.win32.systemevents/4.6.0",
+      "hashPath": "microsoft.win32.systemevents.4.6.0.nupkg.sha512"
+    },
+    "ScottPlot/4.1.45": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ejuUz6h8ox5um165Qhi6yjqvgMHWwe418pSlkmptl3hc8p4+uOr98b2HTZr4h8cmqIlVg60Qp0shaany03M9RQ==",
+      "path": "scottplot/4.1.45",
+      "hashPath": "scottplot.4.1.45.nupkg.sha512"
+    },
+    "ScottPlot.WPF/4.1.45": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QZ7sfFEV1vltjWS08FaMHjftDWuL2tFeAXyZrBOswZjzMSb8k68YMc1IA7Pgg/7D7IvlTCdchrWcE46Lqjz+FQ==",
+      "path": "scottplot.wpf/4.1.45",
+      "hashPath": "scottplot.wpf.4.1.45.nupkg.sha512"
+    },
+    "System.Drawing.Common/4.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TFAADvBEUhdDb2Lteq/BUeG0J1y7a0GyFdpB8yE/eAcbiN0R5MII1nXExXsrtRZiO8C/L9SozL2wGqkRlhiv6A==",
+      "path": "system.drawing.common/4.6.1",
+      "hashPath": "system.drawing.common.4.6.1.nupkg.sha512"
+    },
+    "FunctionApproximatorLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MatrixLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PolynomLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

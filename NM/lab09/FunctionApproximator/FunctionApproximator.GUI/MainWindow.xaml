@@ -1,0 +1,28 @@
+﻿<Window x:Class="FunctionApproximator.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FunctionApproximator.GUI"
+        mc:Ignorable="d"
+        Title="Апроксиматор" Height="420" Width="1395">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WpfPlot Name="LinearPlot"/>
+        <WpfPlot Name="QuadraticPlot" Grid.Column="1"/>
+        <WpfPlot Name="QubicPlot" Grid.Column="2"/>
+        <Label x:Name="LinearLabel" Grid.Row="1" FontSize="20" Content="Лінійний апроксимаційний поліном:&#xD;&#xA; P1(x) =" />
+        <Label x:Name="QuadraticLabel" Grid.Row="1" Grid.Column="1" FontSize="20" Content="Квадратичний апроксимаційний поліном: &#xD;&#xA;P2(x) ="/>
+        <Label x:Name="QubicLabel" Grid.Row="1" Grid.Column="2" FontSize="20" Content="Кубічний апроксимаційний поліном:&#xD;&#xA;P3(x) ="/>
+    </Grid>
+</Window>

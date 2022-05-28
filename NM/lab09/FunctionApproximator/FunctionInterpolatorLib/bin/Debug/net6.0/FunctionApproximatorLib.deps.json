@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FunctionApproximatorLib/1.0.0": {
+        "dependencies": {
+          "MatrixLib": "1.0.0",
+          "PolynomLib": "1.0.0"
+        },
+        "runtime": {
+          "FunctionApproximatorLib.dll": {}
+        }
+      },
+      "MatrixLib/1.0.0": {
+        "runtime": {
+          "MatrixLib.dll": {}
+        }
+      },
+      "PolynomLib/1.0.0": {
+        "runtime": {
+          "PolynomLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionApproximatorLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MatrixLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PolynomLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
