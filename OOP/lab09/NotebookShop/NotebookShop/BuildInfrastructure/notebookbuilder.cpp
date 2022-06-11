@@ -10,3 +10,8 @@ Notebook *NotebookBuilder::getNotebook()
     storage = nullptr;
     return res;
 }
+
+NotebookBuilder::~NotebookBuilder()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " - base class";
+}

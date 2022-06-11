@@ -26,6 +26,11 @@ void MiddlePriceNotebookBuilder::addStorage()
     storage = new SeagateHDD();
 }
 
+MiddlePriceNotebookBuilder::~MiddlePriceNotebookBuilder()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " - derived class";
+}
+
 
 
 

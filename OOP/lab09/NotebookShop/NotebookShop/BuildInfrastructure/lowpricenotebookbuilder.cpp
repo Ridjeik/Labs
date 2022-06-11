@@ -26,6 +26,11 @@ void LowPriceNotebookBuilder::addStorage()
     storage = new SeagateHDD();
 }
 
+LowPriceNotebookBuilder::~LowPriceNotebookBuilder()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " - derived class";
+}
+
 
 
 

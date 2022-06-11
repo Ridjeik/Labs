@@ -26,6 +26,11 @@ void HighPriceNotebookBuilder::addStorage()
     storage = new SamsungSSD();
 }
 
+HighPriceNotebookBuilder::~HighPriceNotebookBuilder()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " - derived class";
+}
+
 
 
 

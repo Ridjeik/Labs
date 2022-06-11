@@ -16,3 +16,8 @@ void NotebookProducer::changeBuilder(NotebookBuilder *builder)
 {
     this->builder = builder;
 }
+
+NotebookProducer::~NotebookProducer()
+{
+    delete this->builder;
+}

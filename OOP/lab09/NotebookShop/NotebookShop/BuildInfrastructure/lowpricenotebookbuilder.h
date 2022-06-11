@@ -15,6 +15,8 @@ public:
     void addDisplay() override;
     void addRAM() override;
     void addStorage() override;
+
+    virtual ~LowPriceNotebookBuilder();
 };
 
 #endif // LOWPRICENOTEBOOKBUILDER_H

@@ -7,6 +7,7 @@
 #include "PCComponents/ram.h"
 #include "PCComponents/storage.h"
 #include "../notebook.h"
+#include <QDebug>
 
 class NotebookBuilder
 {
@@ -26,6 +27,8 @@ public:
     virtual void addStorage() = 0;
 
     Notebook* getNotebook();
+
+    virtual ~NotebookBuilder();
 };
 
 #endif // NOTEBOOKBUILDER_H

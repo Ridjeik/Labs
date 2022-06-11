@@ -11,6 +11,8 @@ public:
 
     Notebook* produce();
     void changeBuilder(NotebookBuilder* builder);
+
+    ~NotebookProducer();
 };
 
 #endif // NOTEBOOKPRODUCER_H

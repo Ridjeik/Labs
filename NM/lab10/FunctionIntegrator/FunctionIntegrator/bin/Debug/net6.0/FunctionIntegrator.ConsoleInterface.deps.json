@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FunctionIntegrator.ConsoleInterface/1.0.0": {
+        "dependencies": {
+          "FunctionIntegrator.Lib": "1.0.0"
+        },
+        "runtime": {
+          "FunctionIntegrator.ConsoleInterface.dll": {}
+        }
+      },
+      "FunctionIntegrator.Lib/1.0.0": {
+        "runtime": {
+          "FunctionIntegrator.Lib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionIntegrator.ConsoleInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FunctionIntegrator.Lib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

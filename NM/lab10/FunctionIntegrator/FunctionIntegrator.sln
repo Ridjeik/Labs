@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionIntegrator.ConsoleInterface", "FunctionIntegrator\FunctionIntegrator.ConsoleInterface.csproj", "{20152B26-E7FC-4EAD-8FE2-BC185C37A0CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionIntegrator.Lib", "FunctionIntegrator.Lib\FunctionIntegrator.Lib.csproj", "{BFC748CD-763E-4393-B1E2-20E05E46B0C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20152B26-E7FC-4EAD-8FE2-BC185C37A0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20152B26-E7FC-4EAD-8FE2-BC185C37A0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20152B26-E7FC-4EAD-8FE2-BC185C37A0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20152B26-E7FC-4EAD-8FE2-BC185C37A0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC748CD-763E-4393-B1E2-20E05E46B0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC748CD-763E-4393-B1E2-20E05E46B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC748CD-763E-4393-B1E2-20E05E46B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC748CD-763E-4393-B1E2-20E05E46B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B16A130-4EE8-4379-B6E4-BD129DA22D6D}
+	EndGlobalSection
+EndGlobal
